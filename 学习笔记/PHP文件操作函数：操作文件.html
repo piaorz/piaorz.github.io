@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>PHP文件操作函数：操作文件 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数 语法 说明    copy() copy(源文件，目的文件) 复制文件   unlink() unlink(目标文件) 删除文件   rename() rename(旧文件名，新文件名) 重命名文件或目录，或移动文件   ftruncate() ftruncate(目标文件资源，截取长度) 将文件截断到指定长度   file_exists() file_exists(目标文件名) 判断">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PHP文件操作函数：操作文件">
+<meta property="og:url" content="http://example.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PHP%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%EF%BC%9A%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数 语法 说明    copy() copy(源文件，目的文件) 复制文件   unlink() unlink(目标文件) 删除文件   rename() rename(旧文件名，新文件名) 重命名文件或目录，或移动文件   ftruncate() ftruncate(目标文件资源，截取长度) 将文件截断到指定长度   file_exists() file_exists(目标文件名) 判断">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-16T08:48:16.824Z">
+<meta property="article:modified_time" content="2022-03-16T08:48:16.814Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PHP%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%EF%BC%9A%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6.html" class="article-date">
+  <time datetime="2022-03-16T08:48:16.824Z" itemprop="datePublished">2022-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP文件操作函数：操作文件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">语法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">copy()</td>
+<td align="center">copy(源文件，目的文件)</td>
+<td align="center">复制文件</td>
+</tr>
+<tr>
+<td align="center">unlink()</td>
+<td align="center">unlink(目标文件)</td>
+<td align="center">删除文件</td>
+</tr>
+<tr>
+<td align="center">rename()</td>
+<td align="center">rename(旧文件名，新文件名)</td>
+<td align="center">重命名文件或目录，或移动文件</td>
+</tr>
+<tr>
+<td align="center">ftruncate()</td>
+<td align="center">ftruncate(目标文件资源，截取长度)</td>
+<td align="center">将文件截断到指定长度</td>
+</tr>
+<tr>
+<td align="center">file_exists()</td>
+<td align="center">file_exists(目标文件名)</td>
+<td align="center">判断文件或文件夹是否存在</td>
+</tr>
+<tr>
+<td align="center">is_file()</td>
+<td align="center">is_file(文件名)</td>
+<td align="center">判断指定的路径存在且为文件</td>
+</tr>
+<tr>
+<td align="center">realpath()</td>
+<td align="center">realpath(文件名)</td>
+<td align="center">返回文件的物理路径</td>
+</tr>
+<tr>
+<td align="center">pathinfo()</td>
+<td align="center">pathinfo(文件名)</td>
+<td align="center">以数组形式返回文件的路径和文件名信息</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PHP%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%EF%BC%9A%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6.html" data-id="cl153uuwy000a5gtr4meyfqzz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/24/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
