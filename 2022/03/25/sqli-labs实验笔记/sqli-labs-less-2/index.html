@@ -7,17 +7,29 @@
   
   <title>sqli-labs less 2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.判断闭合符号 ![屏幕截图 2022-03-24 184912.png (1134×622) (raw.githubusercontent.com)](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;piaorz&#x2F;zhaopian&#x2F;main&#x2F;sqli-lab图片&#x2F;lesson2&#x2F;屏幕截图 2022-03-24 184912.png) 2.判断类型 ![屏幕截图 2022-0">
+  <meta name="description" content="1.判断闭合符号  2.判断类型   可知是整型，不必再添加必和符号。 3.判断列数     可知列数为3 4.爆破数据库  5.爆破数据表&#x2F;查询表名  6.爆破字段&#x2F;查询列名  7.爆破值&#x2F;查询数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqli-labs less 2">
 <meta property="og:url" content="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.判断闭合符号 ![屏幕截图 2022-03-24 184912.png (1134×622) (raw.githubusercontent.com)](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;piaorz&#x2F;zhaopian&#x2F;main&#x2F;sqli-lab图片&#x2F;lesson2&#x2F;屏幕截图 2022-03-24 184912.png) 2.判断类型 ![屏幕截图 2022-0">
+<meta property="og:description" content="1.判断闭合符号  2.判断类型   可知是整型，不必再添加必和符号。 3.判断列数     可知列数为3 4.爆破数据库  5.爆破数据表&#x2F;查询表名  6.爆破字段&#x2F;查询列名  7.爆破值&#x2F;查询数据">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/11.png">
 <meta property="article:published_time" content="2022-03-24T16:22:17.955Z">
-<meta property="article:modified_time" content="2022-03-24T16:12:47.158Z">
+<meta property="article:modified_time" content="2022-03-25T03:43:01.504Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -89,25 +101,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>1.判断闭合符号</p>
-<p>![屏幕截图 2022-03-24 184912.png (1134×622) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 184912.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/1.png" alt="1.png (1134×622) (raw.githubusercontent.com)"></p>
 <p>2.判断类型</p>
-<p>![屏幕截图 2022-03-24 184829.png (1131×620) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 184829.png)</p>
-<p>![屏幕截图 2022-03-24 184739.png (1131×620) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 184739.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/2.png" alt="2.png (1131×620) (raw.githubusercontent.com)"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/3.png" alt="3.png (1131×620) (raw.githubusercontent.com)"></p>
 <p>可知是整型，不必再添加必和符号。</p>
 <p>3.判断列数</p>
-<p>![屏幕截图 2022-03-24 185014.png (1138×622) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185014.png)</p>
-<p>![屏幕截图 2022-03-24 185046.png (1133×620) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185046.png)</p>
-<p>![屏幕截图 2022-03-24 185133.png (1137×629) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185133.png)</p>
-<p>![屏幕截图 2022-03-24 185224.png (1131×625) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185224.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/4.png" alt="4.png (1138×622) (raw.githubusercontent.com)"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/5.png" alt="5.png (1133×620) (raw.githubusercontent.com)"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/6.png" alt="6.png (1137×629) (raw.githubusercontent.com)"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/7.png" alt="7.png (1131×625) (raw.githubusercontent.com)"></p>
 <p>可知列数为3</p>
 <p>4.爆破数据库</p>
-<p>![屏幕截图 2022-03-24 185332.png (1136×623) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185332.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/8.png" alt="8.png (1136×623) (raw.githubusercontent.com)"></p>
 <p>5.爆破数据表/查询表名</p>
-<p>![屏幕截图 2022-03-24 185515.png (1131×618) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185515.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/9.png" alt="9.png (1131×618) (raw.githubusercontent.com)"></p>
 <p>6.爆破字段/查询列名</p>
-<p>![屏幕截图 2022-03-24 190739.png (1153×625) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 190739.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/10.png" alt="10.png (1153×625) (raw.githubusercontent.com)"></p>
 <p>7.爆破值/查询数据</p>
-<p>![屏幕截图 2022-03-24 185714.png (1920×883) (raw.githubusercontent.com)](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab%E5%9B%BE%E7%89%87/lesson2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/piaorz/zhaopian/main/sqli-lab图片/lesson2/屏幕截图</a> 2022-03-24 185714.png)</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/11.png" alt="11.png (1920×883) (raw.githubusercontent.com)"></p>
 
       
     </div>
